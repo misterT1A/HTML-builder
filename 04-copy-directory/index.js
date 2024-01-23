@@ -19,17 +19,17 @@ const copyDir = () => {
         if (err) throw err;
       });
     });
-  });
 
-  fs.readdir(targetFolderPath, (err, files) => {
-    if (err) throw err;
+    fs.readdir(targetFolderPath, (err, files) => {
+      if (err) throw err;
 
-    files.forEach((file) => {
-      const targetFile = path.resolve(targetFolderPath, file);
-      const newFile = path.resolve(newFolderPath, file);
+      files.forEach((file) => {
+        const targetFile = path.resolve(targetFolderPath, file);
+        const newFile = path.resolve(newFolderPath, file);
 
-      fs.copyFile(targetFile, newFile, (err) => {
-        if (err) throw err;
+        fs.copyFile(targetFile, newFile, (err) => {
+          if (err) throw err;
+        });
       });
     });
   });
